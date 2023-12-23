@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      transition: background-color 0.5s;
+    }
+    
+    #toggle-icon {
+      font-size: 24px;
+      cursor: pointer;
+      color: #fff;
+    }
+    
+    .dark-mode #toggle-icon {
+      color: #000;
+    }
+    
+    .light-mode {
+      background-color: #fff;
+    }
+    
+    .dark-mode {
+      background-color: #000;
+    }
+  </style>
+  <script>
+    function toggleMode() {
+      var body = document.body;
+      var icon = document.getElementById('toggle-icon');
+      
+      if (body.classList.contains('dark-mode')) {
+        // Switch to light mode
+        body.classList.remove('dark-mode');
+        icon.innerHTML = '☀️';
+      } else {
+        // Switch to dark mode
+        body.classList.add('dark-mode');
+        icon.innerHTML = '🌙';
+      }
+    }
+  </script>
+</head>
+<body class="light-mode">
+  <div id="toggle-icon" onclick="toggleMode()">☀️</div>
+
+  
+
+</body>
+</html>
